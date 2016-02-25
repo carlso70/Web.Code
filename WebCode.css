@@ -4,7 +4,7 @@
                 padding: 7px;
                 width: 99.5%;
                 height: 40px;
-                background-color: #C0C0C0;
+                background: -webkit-gradient(linear, left top, left bottom, from(#bbb), to(#f0f0f0), color-stop(0.5, #eee), color-stop(0.6, #ddd), color-stop(0.95, #eee));;
                 border-bottom: 5px solid grey;
             }
             
@@ -19,9 +19,19 @@
             body {
                 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
                 font-weight: 300;
+                
+                background: #8e9eab; /* fallback for old browsers */
+                background: -webkit-linear-gradient(to left, #8e9eab , #eef2f3); /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to left, #8e9eab , #eef2f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
             }
             
-            #runButton{
+            #runButton{ 
+                border: 1px solid #999;
+                border-top-color: #AAA;
+                border-bottom-color: #777;
+                border-right-color: #999;
+                border-radius: 10px;
                 font-size: 140%;
                 float: right;
                 margin: 2.5px 12.5px 5px 5px;
@@ -65,6 +75,7 @@
                 border:0px 0px 1px 0px;
                 font-size: 130%;
                 box-sizing: border-box;
+                background-color: transparent;
             }
             
             #CSSContainer, #JSContainer{
