@@ -4,9 +4,12 @@
     <title>Web.Code</title>
         <meta charset="utf-8"/>
         <meta http-equiv="Content-type" content="text/html; charset=utf-"/>
+    
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         
         <script type="text/javascript" src ="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    
+        <script type="text/javascript" src="saveFile.js"></script>
     
         <link rel="stylesheet" type="text/css" href="WebCode.css"/>
         
@@ -18,13 +21,15 @@
         
             <div id="logo">Web.Code</div>
         
-            <button id="runButton">Run</button>
+            <button class="menuButton" id="saveButton">Save</button>
+            
+            <button class="menuButton" id="runButton">Run</button>
         
             <ul id="languages">
                 <li class="toggle selected">HTML</li>
                 <li class="toggle">CSS</li>
                 <li class="toggle">JS</li>
-                <li class="toggle selected" style="border:none;">Result</li>
+                <li class="toggle selected" style="border:none; padding= none;">Result</li>
             </ul>
         </div>
     </div>
@@ -79,9 +84,15 @@
                
         });
         
+        $("#saveButton").click(function() {
+            alert("clicked");
+            var css = $("#cssCode").val();
+            var html = $("#htmlCode").val();
+            var js =  $("#jsCode").val();
+            saveTextAsFile(html, css, js);
+        });
         
         $("#runButton").click(function() {
-           
             var css = $("#cssCode").val();
             var html = $("#htmlCode").val();
             $("iframe").contents().find("html").html("<style>" + css +"</style>" + "<html>" + html +"</html>");
@@ -90,6 +101,7 @@
             //eval($("#jsCode").val());
             
         });
+        
         
     </script>
 </body>
